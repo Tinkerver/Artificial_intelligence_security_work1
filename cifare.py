@@ -7,8 +7,8 @@ import torch.utils.data as data
 import torchvision.datasets as datasets
 import torchvision.transforms as transforms
 
-num_epoch = 10
-BATCH_SIZE = 50
+num_epoch = 100
+BATCH_SIZE = 250
 
 transform = transforms.Compose(
     [transforms.ToTensor()
