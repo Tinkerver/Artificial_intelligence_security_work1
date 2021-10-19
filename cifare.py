@@ -60,6 +60,8 @@ for epoch in range(num_epoch):
         if i % 100 == 0:
             print('loss = %.5f' % loss)
 
+torch.save(net.state_dict(),'final.pth')
+
 #对测试集的评估
 total = 0
 correct = 0
@@ -71,5 +73,6 @@ for image, label in test_loader:
     _, prediction = torch.max(x, 1)
     total += label.size(0)
     correct += (prediction == label).sum()
+
 print('There are ' + str(correct.item()) + ' correct pictures.')
 print('Accuracy=%.2f' % (100.00 * correct.item() / total))
